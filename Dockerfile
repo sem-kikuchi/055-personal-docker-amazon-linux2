@@ -30,6 +30,9 @@ RUN yum install -y cmake3
 
 RUN yum install java-11-amazon-corretto-headless -y
 
+RUN amazon-linux-extras install python3.8 -y
+RUN pip3.8 install statsd watchdog pandas
+
 # create user
 RUN useradd "ec2-user" && echo "ec2-user ALL=NOPASSWD: ALL" >> /etc/sudoers
 
